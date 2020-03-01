@@ -15,7 +15,7 @@ class LogPackage implements RegistrationInterface
     public function addToContainer(Container $c)
     {
         if ($c->has('display_errors')) {
-            ini_set('display_errors', $c->get('display_errors'));
+            ini_set('display_errors', (string) $c->get('display_errors'));
         }
 
         if ($c->has('error_reporting')) {
