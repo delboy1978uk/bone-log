@@ -6,11 +6,15 @@ namespace Bone\Log;
 
 use Barnacle\Container;
 use Barnacle\RegistrationInterface;
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
 
 class LogPackage implements RegistrationInterface
 {
     /**
      * @param Container $c
+     * @return array
+     * @throws \Exception
      */
     public function addToContainer(Container $c)
     {
@@ -29,6 +33,21 @@ class LogPackage implements RegistrationInterface
                 chmod($errorLog, 0775);
             }
             ini_set($c->get('error_log'), $errorLog);
+        }
+
+        if ($c->has('log')) {
+            $c[Logger::class] = $c->factory(function (Container $c) {
+                $config = $c->get('log');
+                $logChannels = [];
+
+                foreach ($config['channels'] as $name => $path) {
+                    $logger = new Logger($name);
+                    $logger->pushHandler(new StreamHandler($path, Logger::DEBUG));
+                    $logChannels[$name] = $logger;
+                }
+
+                return $logChannels;
+            });
         }
     }
 
