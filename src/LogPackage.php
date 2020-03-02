@@ -1,12 +1,9 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace Bone\Log;
 
 use Barnacle\Container;
 use Barnacle\RegistrationInterface;
-use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 
 class LogPackage implements RegistrationInterface
@@ -38,15 +35,9 @@ class LogPackage implements RegistrationInterface
         if ($c->has('log')) {
             $c[Logger::class] = $c->factory(function (Container $c) {
                 $config = $c->get('log');
-                $logChannels = [];
+                $loggerFactory = new LoggerFactory();
 
-                foreach ($config['channels'] as $name => $path) {
-                    $logger = new Logger($name);
-                    $logger->pushHandler(new StreamHandler($path, Logger::DEBUG));
-                    $logChannels[$name] = $logger;
-                }
-
-                return $logChannels;
+                return $loggerFactory->createLoggers($config);
             });
         }
     }
