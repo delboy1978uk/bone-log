@@ -4,7 +4,7 @@ namespace Bone\Log;
 
 use Barnacle\Container;
 use Barnacle\RegistrationInterface;
-use Monolog\Logger;
+use Psr\Log\LoggerInterface;
 
 class LogPackage implements RegistrationInterface
 {
@@ -33,7 +33,7 @@ class LogPackage implements RegistrationInterface
         }
 
         if ($c->has('log')) {
-            $c[Logger::class] = $c->factory(function (Container $c) {
+            $c[LoggerInterface::class] = $c->factory(function (Container $c) {
                 $config = $c->get('log');
                 $loggerFactory = new LoggerFactory();
 

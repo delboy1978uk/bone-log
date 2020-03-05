@@ -10,6 +10,7 @@ class LoggerFactory
     /**
      * @param array $config
      * @return array
+     * @throws \Exception
      */
     public function createLoggers(array $config): array
     {
