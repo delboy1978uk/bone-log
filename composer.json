@@ -1,5 +1,5 @@
 {
-    "name": "delboy1978uk\/bone-log",
+    "name": "delboy1978uk/bone-log",
     "description": "Log package for Bone MVC Framework",
     "license": "MIT",
     "authors": [
@@ -9,14 +9,20 @@
         }
     ],
     "require": {
-
+        "monolog/monolog": "^1.23"
     },
     "require-dev": {
+        "codeception/codeception": "^2.2",
         "roave\/security-advisories": "dev-master"
     },
     "autoload": {
         "psr-4": {
             "Bone\\Log\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BoneTest\\": "tests/unit/"
         }
     }
 }
