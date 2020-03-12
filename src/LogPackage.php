@@ -41,20 +41,4 @@ class LogPackage implements RegistrationInterface
             });
         }
     }
-
-    /**
-     * @return string
-     */
-    public function getEntityPath(): string
-    {
-        return '';
-    }
-
-    /**
-     * @return bool
-     */
-    public function hasEntityPath(): bool
-    {
-        return false;
-    }
 }

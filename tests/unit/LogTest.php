@@ -15,6 +15,7 @@ use Bone\I18n\I18nPackage;
 use Bone\I18n\Service\TranslatorFactory;
 use Bone\I18n\View\Extension\LocaleLink;
 use Bone\I18n\View\Extension\Translate;
+use Bone\Log\LogPackage;
 use Bone\Router\Router;
 use Bone\View\ViewPackage;
 use BoneTest\AnotherFakeRequestHandler;
@@ -33,6 +34,7 @@ use League\Route\Route;
 use Locale;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Psr\Log\LoggerInterface;
 
 class LogTest extends Test
 {
@@ -42,18 +44,27 @@ class LogTest extends Test
     protected function _before()
     {
         $this->container = $c = new Container();
-
+        $this->container['error_log'] = 'tests/_data/logs/error_log';
+        $this->container['error_reporting'] = -1;
+        $this->container['display_errors'] = false;
+        $this->container['log'] = [
+            'channels' => [
+                'default' => 'tests/_data/logs/default_log',
+            ],
+        ];
     }
 
     protected function _after()
     {
         unset($this->container);
+        unlink('tests/_data/logs/error_log');
     }
 
     public function testLogPackage()
     {
-
+        $package = new LogPackage();
+        $package->addToContainer($this->container);
+        $this->assertTrue($this->container->has(LoggerInterface::class));
+        $this->assertInstanceOf(LoggerInterface::class, $this->container->get(LoggerInterface::class));
     }
 }
-
-

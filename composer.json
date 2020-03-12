@@ -9,6 +9,8 @@
         }
     ],
     "require": {
+        "php": ">7.1",
+        "delboy1978uk/barnacle": "^2.2",
         "monolog/monolog": "^1.23"
     },
     "require-dev": {
