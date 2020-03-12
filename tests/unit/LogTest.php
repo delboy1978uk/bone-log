@@ -65,6 +65,9 @@ class LogTest extends Test
         $package = new LogPackage();
         $package->addToContainer($this->container);
         $this->assertTrue($this->container->has(LoggerInterface::class));
-        $this->assertInstanceOf(LoggerInterface::class, $this->container->get(LoggerInterface::class));
+        $loggers = $this->container->get(LoggerInterface::class);
+        $this->assertCount(1, $loggers);
+        $this->assertArrayHasKey('default', $loggers);
+        $this->assertInstanceOf(LoggerInterface::class, $loggers['default']);
     }
 }
