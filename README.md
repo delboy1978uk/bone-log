@@ -8,7 +8,7 @@ bone-log is a core dependency of Bone Framework, as so comes installed as standa
 skeleton project
 ## usage
 To get a logger into your controllers, make them implement `Bone\Log\LoggerAwareInterface`, and use the trait
-`Bone\Traits\HasLoggerTrait`. 
+`Bone\Log\Traits\HasLoggerTrait`. 
 ```php
 <?php
 
@@ -16,7 +16,7 @@ namespace Whatever;
 
 use Bone\Controller\Controller;
 use Bone\Log\LoggerAwareInterface;
-use Bone\Traits\HasLoggerTrait;
+use Bone\Log\Traits\HasLoggerTrait;
 
 class WhateverController extends Controller implements LoggerAwareInterface
 {
