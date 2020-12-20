@@ -29,7 +29,7 @@ class LogPackage implements RegistrationInterface
                 file_put_contents($errorLog, '');
                 chmod($errorLog, 0775);
             }
-            ini_set($c->get('error_log'), $errorLog);
+            ini_set('error_log', $errorLog);
         }
 
         if ($c->has('log')) {
