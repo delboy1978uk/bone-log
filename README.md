@@ -1,6 +1,6 @@
 # log
 [![Latest Stable Version](https://poser.pugx.org/delboy1978uk/bone-log/v/stable)](https://packagist.org/packages/delboy1978uk/bone-log) [![Total Downloads](https://poser.pugx.org/delboy1978uk/bone/downloads)](https://packagist.org/packages/delboy1978uk/bone) [![Latest Unstable Version](https://poser.pugx.org/delboy1978uk/bone-log/v/unstable)](https://packagist.org/packages/delboy1978uk/bone-log) [![License](https://poser.pugx.org/delboy1978uk/bone-log/license)](https://packagist.org/packages/delboy1978uk/bone-log)<br />
-[![Build Status](https://travis-ci.org/delboy1978uk/bone-log.png?branch=master)](https://travis-ci.org/delboy1978uk/bone-log) [![Code Coverage](https://scrutinizer-ci.com/g/delboy1978uk/bone-log/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/delboy1978uk/bone-log/?branch=master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/delboy1978uk/bone-log/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/delboy1978uk/bone-log/?branch=master)<br />
+![build status](https://github.com/delboy1978uk/bone-log/actions/workflows/master.yml/badge.svg) [![Code Coverage](https://scrutinizer-ci.com/g/delboy1978uk/bone-log/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/delboy1978uk/bone-log/?branch=master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/delboy1978uk/bone-log/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/delboy1978uk/bone-log/?branch=master)<br />
 
 Log package for Bone Framework
 ## installation
