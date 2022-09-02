@@ -18,20 +18,11 @@ jobs:
     strategy:
       matrix:
         php-version:
-          - 7.3
-          - 7.4
-          - 8.0
           - 8.1
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-
-      - name: Set up MySQL
-        run: sudo service mysql start
-
-      - name: Create DB
-        run: mysql -e 'CREATE DATABASE ${{ env.DB_DATABASE }};' -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }}
 
       - name: Validate composer.json and composer.lock
         run: composer validate --strict
