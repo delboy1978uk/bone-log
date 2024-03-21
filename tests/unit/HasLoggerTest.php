@@ -3,10 +3,10 @@
 namespace BoneTest;
 
 use Bone\Log\Traits\HasLoggerTrait;
-use Codeception\TestCase\Test;
+use Codeception\Test\Unit;
 use Psr\Log\LoggerInterface;
 
-class HasLoggerTest extends Test
+class HasLoggerTest extends Unit
 {
     public function testLogger()
     {
