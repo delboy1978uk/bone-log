@@ -24,7 +24,7 @@ use BoneTest\FakeMiddleware;
 use BoneTest\FakePackage\FakePackagePackage;
 use BoneTest\FakeRequestHandler;
 use BoneTest\MiddlewareTestHandler;
-use Codeception\TestCase\Test;
+use Codeception\Test\Unit;
 use Laminas\Diactoros\ServerRequest;
 use Laminas\Diactoros\Stream;
 use Laminas\Diactoros\Uri;
@@ -36,7 +36,7 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Log\LoggerInterface;
 
-class LogTest extends Test
+class LogTest extends Unit
 {
     /** @var Container */
     protected $container;
