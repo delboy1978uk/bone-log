@@ -1,4 +1,4 @@
-actor: Tester
+actor_suffix: Tester
 paths:
     tests: tests
     output: tests/_output
@@ -10,5 +10,6 @@ settings:
     memory_limit: 1024M
 coverage:
     enabled: true
-    include:
-        - src/*
+    whitelist:
+        include:
+            - src/*.php
